@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { LocaleContext } from "../layouts";
+import LocaleContext from "../localeContext";
 import locales from "../../config/i18n";
 
 // Use the globally available context to choose the right path

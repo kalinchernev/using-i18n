@@ -1,32 +1,22 @@
-import React, { useEffect } from "react";
-import { I18nextProvider } from "react-i18next";
+import React from "react";
 
 import "../global.css";
-import i18n from "../i18n";
 
 import Navigation from "../components/navigation";
 import Welcome from "../components/welcome";
 
-const LocaleContext = React.createContext();
+import withI18next from "../i18n/withI18next";
 
-const Layout = ({ children, pageContext: { locale } }) => {
-  useEffect(() => {
-    i18n.changeLanguage(locale);
-  }, [locale]);
-
+const Layout = ({ children }) => {
   return (
-    <LocaleContext.Provider value={{ locale }}>
-      <I18nextProvider i18n={i18n}>
-        <div className="global-wrapper">
-          <header className="global-header">
-            <Navigation />
-          </header>
-          <Welcome />
-          <main>{children}</main>
-        </div>
-      </I18nextProvider>
-    </LocaleContext.Provider>
+    <div className="global-wrapper">
+      <header className="global-header">
+        <Navigation />
+      </header>
+      <Welcome />
+      <main>{children}</main>
+    </div>
   );
 };
 
-export { Layout as default, LocaleContext };
+export default withI18next()(Layout);
