@@ -1,10 +1,10 @@
-import React from "react"
-import { Link } from "gatsby"
-import LocalizedLink from "./localizedLink"
-import useTranslations from "./useTranslations"
+import React from "react";
+import { Link } from "gatsby";
+import LocalizedLink from "./localizedLink";
+import useTranslations from "./useTranslations";
 
 const Navigation = () => {
-  const { backToHome } = useTranslations()
+  const { backToHome } = useTranslations();
 
   return (
     <nav>
@@ -21,7 +21,7 @@ const Navigation = () => {
         </Link>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;
