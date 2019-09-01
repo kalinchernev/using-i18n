@@ -1,27 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { I18nextProvider } from "react-i18next";
 
 import "../global.css";
-import "../i18n";
+import i18n from "../i18n";
 
 import Navigation from "../components/navigation";
 import Welcome from "../components/welcome";
 
 const LocaleContext = React.createContext();
 
-// Use the built-in Context API to make the "locale" available to every component in the tree
-// This e.g. enables the LocalizedLink to function correctly
-// As this component wraps every page (due to the wrapPageElement API) we can be sure to have
-// the locale available everywhere!
-const Layout = ({ children, pageContext: { locale } }) => (
-  <LocaleContext.Provider value={{ locale }}>
-    <div className="global-wrapper">
-      <header className="global-header">
-        <Navigation />
-      </header>
-      <Welcome />
-      <main>{children}</main>
-    </div>
-  </LocaleContext.Provider>
-);
+const Layout = ({ children, pageContext: { locale } }) => {
+  useEffect(() => {
+    i18n.changeLanguage(locale);
+  }, [locale]);
+
+  return (
+    <LocaleContext.Provider value={{ locale }}>
+      <I18nextProvider i18n={i18n}>
+        <div className="global-wrapper">
+          <header className="global-header">
+            <Navigation />
+          </header>
+          <Welcome />
+          <main>{children}</main>
+        </div>
+      </I18nextProvider>
+    </LocaleContext.Provider>
+  );
+};
 
 export { Layout as default, LocaleContext };

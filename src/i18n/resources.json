@@ -1,0 +1,12 @@
+{
+  "en": {
+    "translation": {
+      "Using i18next": "Using i18next (EN)"
+    }
+  },
+  "de": {
+    "translation": {
+      "Using i18next": "Using i18next (DE)"
+    }
+  }
+}
