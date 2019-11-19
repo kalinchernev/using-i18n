@@ -1,3 +1,7 @@
+# Building a multilingual Gatsby site
+
+This repo is a copy of an official example approach combining few suggestions. Refections are documented into this [article about Gatsby i18n](https://kalinchernev.github.io/multilingual-gatsbyjs).
+
 # Using i18n
 
 https://using-i18n.netlify.com/
