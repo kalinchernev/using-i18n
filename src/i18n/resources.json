@@ -1,12 +1,14 @@
 {
   "en": {
     "translation": {
-      "Using i18next": "Using i18next (EN)"
+      "Using i18next": "Using i18next (EN)",
+      "not found": "not found"
     }
   },
   "de": {
     "translation": {
-      "Using i18next": "Using i18next (DE)"
+      "Using i18next": "Using i18next (DE)",
+      "not found": "not found (DE)"
     }
   }
 }
