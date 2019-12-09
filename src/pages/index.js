@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import LocalizedLink from "../components/localizedLink"
 import useTranslations from "../components/useTranslations"
+import Welcome from "../components/welcome"
 
 const Index = ({ data: { allMdx } }) => {
   // useTranslations is aware of the global context (and therefore also "locale")
@@ -10,6 +11,7 @@ const Index = ({ data: { allMdx } }) => {
 
   return (
     <>
+      <Welcome />
       <h1>{hello}</h1>
       <p>{subline}</p>
       <hr style={{ margin: `2rem 0` }} />

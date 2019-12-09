@@ -3,7 +3,6 @@ import React from "react";
 import "../global.css";
 
 import Navigation from "../components/navigation";
-import Welcome from "../components/welcome";
 
 import withI18next from "../i18n/withI18next";
 
@@ -13,7 +12,6 @@ const Layout = ({ children }) => {
       <header className="global-header">
         <Navigation />
       </header>
-      <Welcome />
       <main>{children}</main>
     </div>
   );
